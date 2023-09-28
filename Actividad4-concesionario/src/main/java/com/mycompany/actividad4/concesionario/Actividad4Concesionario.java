@@ -5,6 +5,12 @@
 package com.mycompany.actividad4.concesionario;
 
 import java.awt.HeadlessException;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -25,9 +31,10 @@ Muestra todos los datos de cada coche en un cuadro de dialogo, es decir, si tene
 con sus respectivos datos.*/
 //Utilizar el metodo appending para añadir al fichero, buferedreader, hacer que no se sobescriban con el metodo append
 //Preguntas cuantos coches quiere registrar e irlos metiendo sin sobescribirlos
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NumberFormatException, HeadlessException, IOException {
         Scanner sc= new Scanner(System.in);
         JOptionPane op= new JOptionPane(System.in);
+        boolean salir= false;
         int opcion= Integer.parseInt(JOptionPane.showInputDialog(null, "Menu\n"+"1.Registrar\n"+"2.Ver registros\n"+"3.Salir"));
         //String nCoches= JOptionPane.showInputDialog("Introduce el número de coches que quieres registrar");
         //JOptionPane.showMessageDialog(null, "Esta bien, registraremos los "+nCoches+" coches");
@@ -37,13 +44,29 @@ con sus respectivos datos.*/
                     Registrar();
                     break;
                 case 2:
-                    
+                    VerRegistros();
                     break;
-            }
-
-            
+                case 3:
+                    salir=true;
+                    System.out.println("Gracias por registrar tu vehículo con nosotros");
+                    break;
+            }    
     }
-    private static void Registrar() throws NumberFormatException, HeadlessException {
+    
+    private static void VerRegistros() throws HeadlessException, IOException, FileNotFoundException {
+        FileReader fr= new FileReader("RegistrosCoches.txt");
+        char[] a= new char[10000];
+        fr.read(a);
+        String st= "";
+        //Bucle para que leea todo el fichero
+        for(char c : a){
+            st+=c;//Esto hace que se junten las letras para q no salgan mazo jOption pane
+        }
+        JOptionPane.showMessageDialog(null, st);
+        
+        fr.close();
+    }
+    private static void Registrar() throws NumberFormatException, HeadlessException, IOException {
         boolean repetir= true;
         String matricula= JOptionPane.showInputDialog("Introduce la matrícula del cocche: ");
         JOptionPane.showMessageDialog(null,"Matricula "+matricula+" registrada.");
@@ -81,5 +104,13 @@ con sus respectivos datos.*/
                 repetirAnio = true;
             }
         }
+            File archivo= new File("RegistrosCoches.txt");
+            archivo.createNewFile();
+            
+            try (BufferedWriter escribir = new BufferedWriter(new FileWriter("RegistrosCoches.txt", true))) {
+                escribir.write("Matricula: "+matricula+ " Marca: "+marca+ " Modelo: "+modelo+ " Combustible: "+combustible+ " Puertas: "+nPuertas+ " Año vehiculo: "+aVehiculo+"\n");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
 }
