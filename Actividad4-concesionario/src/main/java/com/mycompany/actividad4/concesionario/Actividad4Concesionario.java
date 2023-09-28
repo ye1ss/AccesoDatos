@@ -53,19 +53,7 @@ con sus respectivos datos.*/
             }    
     }
     
-    private static void VerRegistros() throws HeadlessException, IOException, FileNotFoundException {
-        FileReader fr= new FileReader("RegistrosCoches.txt");
-        char[] a= new char[10000];
-        fr.read(a);
-        String st= "";
-        //Bucle para que leea todo el fichero
-        for(char c : a){
-            st+=c;//Esto hace que se junten las letras para q no salgan mazo jOption pane
-        }
-        JOptionPane.showMessageDialog(null, st);
-        
-        fr.close();
-    }
+   
     private static void Registrar() throws NumberFormatException, HeadlessException, IOException {
         boolean repetir= true;
         String matricula= JOptionPane.showInputDialog("Introduce la matrícula del cocche: ");
@@ -112,5 +100,18 @@ con sus respectivos datos.*/
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    private static void VerRegistros() throws HeadlessException, IOException, FileNotFoundException {
+        FileReader fr= new FileReader("RegistrosCoches.txt");
+        char[] a= new char[10000];
+        fr.read(a);
+        String st= "";
+        //Bucle para que leea todo el fichero
+        for(char c : a){
+            st+=c;//Esto hace que se junten las letras para q no salgan mazo jOption pane
+        }
+        JOptionPane.showMessageDialog(null, st);
+        
+        fr.close();
     }
 }
