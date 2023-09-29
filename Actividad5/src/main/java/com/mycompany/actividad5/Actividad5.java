@@ -24,6 +24,6 @@ public class Actividad5 {
         miPanel.setSize(150,100);
         
         
-        
+        jf.setVisible(true);
     }
 }
