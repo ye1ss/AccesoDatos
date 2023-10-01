@@ -45,7 +45,7 @@ con sus respectivos datos.*/
     }
     private static void Registrar() throws NumberFormatException, HeadlessException {
         boolean repetir= true;
-        String matricula= JOptionPane.showInputDialog("Introduce la matrícula del cocche: ");
+        String matricula= JOptionPane.showInputDialog("Introduce la matrícula del coche: ");
         JOptionPane.showMessageDialog(null,"Matricula "+matricula+" registrada.");
         
         String marca= JOptionPane.showInputDialog("Introduce la marca del coche: ");
