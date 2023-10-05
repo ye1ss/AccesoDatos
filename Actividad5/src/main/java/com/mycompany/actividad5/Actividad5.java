@@ -4,8 +4,10 @@
 
 package com.mycompany.actividad5;
 
+import java.awt.TextField;
 import java.util.Scanner;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -22,12 +24,20 @@ public class Actividad5 {
         Scanner sc= new Scanner(System.in);
         //Creamos la ventana
         JFrame jf= new JFrame("Menu Principal");
-        jf.setSize(600,400);
+        jf.setSize(300,300);
         //Añadimos un panel a la ventana
         JPanel miPanel= new JPanel();
         miPanel.setSize(150,100);
+        JLabel jl= new JLabel("1.Directorio: ");
+        TextField f1= new TextField();
+        f1.setSize(10, 0);//cambbiar el tamaño de donde escribo
+        miPanel.add(jl);
+        miPanel.add(f1);
         //Añadimos los botones
         
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Para que no se me quede el frame abierto
+        jf.add(miPanel);
         jf.setVisible(true);
+        
     }
 }
