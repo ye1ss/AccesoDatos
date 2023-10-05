@@ -16,13 +16,13 @@ public class Actividad5 {
     /**/
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        
-        JFrame jf= new JFrame();
-        jf.setSize(300,200);
-        
+        //Creamos la ventana
+        JFrame jf= new JFrame("Menu Principal");
+        jf.setSize(600,400);
+        //Añadimos un panel a la ventana
         JPanel miPanel= new JPanel();
         miPanel.setSize(150,100);
-        
+        //Añadimos los botones
         
         jf.setVisible(true);
     }
