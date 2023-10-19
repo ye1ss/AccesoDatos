@@ -25,16 +25,16 @@ public class Actividad7 {
 //                        int resultado = fc.showOpenDialog(null);
 //                        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                         String ruta=JOptionPane.showInputDialog(null, "Escribe la ruta completa de un archivo");
-                        File fichero= new File(ruta);
+                        File archivo= new File(ruta);
                         //verificar i el archivo existe y si tiene permisos de lectura
-                        if(fichero.exists()&& fichero.canRead()){
-                            JOptionPane.showConfirmDialog(null, "El archivo tiene permisos de lectura");
-                        }else {
-                            JOptionPane.showMessageDialog(null, "El archivo no tiene permisos de lectura");
+                        if(!archivo.isFile());{
+                            JOptionPane.showMessageDialog(null, "No ha introducido correctamente un archivo","Error",JOptionPane.ERROR_MESSAGE);
+                            return;
                         }
-                        //verificar si el archivo existe y tiene permisos de 
-                        break;
-
+                        boolean lectura= archivo.canRead(), escritura= archivo.canWrite(), ejecucion= archivo.canExecute();
+                        String mensaje= String.format("Permisos del archivo:\nLectura: %s\nEscritura: %s\nEjecuión: %s", lectura, escritura, ejecucion);
+                        JOptionPane.showMessageDialog(null,mensaje,"Permisos del archivo",JOptionPane.INFORMATION_MESSAGE);
+                        
                     case 1: 
                         JOptionPane.showMessageDialog(null, "Has seleccionado 'Sobre Directorio'");
                         break;
