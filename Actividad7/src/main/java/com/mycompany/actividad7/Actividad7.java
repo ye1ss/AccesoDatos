@@ -5,6 +5,7 @@
 package com.mycompany.actividad7;
 
 
+import java.awt.HeadlessException;
 import java.io.File;
 import javax.swing.JOptionPane;
 
@@ -21,21 +22,9 @@ public class Actividad7 {
         
                 switch(seleccion){
                     case 0:
-//                        JFileChooser fc= new JFileChooser();
-//                        int resultado = fc.showOpenDialog(null);
-//                        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-                        String ruta=JOptionPane.showInputDialog(null, "Escribe la ruta completa de un archivo");
-                        File archivo= new File(ruta);
-                        //verificar i el archivo existe y si tiene permisos de lectura
-                        if(!archivo.isFile());{
-                            JOptionPane.showMessageDialog(null, "No ha introducido correctamente un archivo","Error",JOptionPane.ERROR_MESSAGE);
-                            return;
-                        }
-                        boolean lectura= archivo.canRead(), escritura= archivo.canWrite(), ejecucion= archivo.canExecute();
-                        String mensaje= String.format("Permisos del archivo:\nLectura: %s\nEscritura: %s\nEjecuión: %s", lectura, escritura, ejecucion);
-                        JOptionPane.showMessageDialog(null,mensaje,"Permisos del archivo",JOptionPane.INFORMATION_MESSAGE);
-                        
-                    case 1: 
+                        if(verificarPermisosArchivo())return;
+                        break;
+                        case 1: 
                         JOptionPane.showMessageDialog(null, "Has seleccionado 'Sobre Directorio'");
                         break;
                     case 2:
@@ -44,7 +33,29 @@ public class Actividad7 {
                     default:
                         JOptionPane.showMessageDialog(null, "Opción no válida");
                         break;
+                        
+                        //verificar i el archivo existe y si tiene permisos de lectura
+                        
+                        
+                        
+                    
                 }
     
+    }
+
+    private static boolean verificarPermisosArchivo() throws HeadlessException {
+        //                        JFileChooser fc= new JFileChooser();
+//                        int resultado = fc.showOpenDialog(null);
+//                        fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            String ruta=JOptionPane.showInputDialog(null, "Escribe la ruta completa de un archivo");
+            File archivo= new File(ruta);
+            if(!archivo.isFile()){
+                JOptionPane.showMessageDialog(null, "No ha introducido correctamente un archivo","Error",JOptionPane.ERROR_MESSAGE);
+                return;
+                }
+            boolean lectura= archivo.canRead(), escritura= archivo.canWrite(), ejecucion= archivo.canExecute();
+            String mensaje= String.format("Permisos del archivo:\nLectura: %s\nEscritura: %s\nEjecuión: %s", lectura, escritura, ejecucion);
+            JOptionPane.showMessageDialog(null,mensaje,"Permisos del archivo",JOptionPane.INFORMATION_MESSAGE);
+            return false;
     }
 }
