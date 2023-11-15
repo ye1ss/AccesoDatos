@@ -15,7 +15,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -49,11 +48,10 @@ public class Actividad4_UD2 {
                 JFrame ventana1= new JFrame("Info de Ciudades- país donde opera Sakila");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "root");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila", "root", "");
                     Statement stmt = con.createStatement();
                     
                     // Ejecución de la consulta
@@ -66,14 +64,13 @@ public class Actividad4_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana1.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });
@@ -83,7 +80,6 @@ public class Actividad4_UD2 {
                 JFrame ventana1= new JFrame("Info de Peliculas disponibles en Sakila por duración");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -100,14 +96,13 @@ public class Actividad4_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });
@@ -117,7 +112,6 @@ public class Actividad4_UD2 {
                 JFrame ventana1= new JFrame("Info de empleados de Sakila");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -135,14 +129,13 @@ public class Actividad4_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });

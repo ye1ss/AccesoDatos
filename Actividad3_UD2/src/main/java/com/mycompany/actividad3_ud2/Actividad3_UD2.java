@@ -23,6 +23,8 @@ import javax.swing.JTextArea;
  *
  * @author Yeismil P
  */
+
+//cambie 19 por 17 para clase en el pom
 public class Actividad3_UD2 {
 
     public static void main(String[] args) {
@@ -55,7 +57,6 @@ public class Actividad3_UD2 {
                 JFrame ventana1= new JFrame("Info tabla Payment");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -73,14 +74,13 @@ public class Actividad3_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });
@@ -90,7 +90,6 @@ public class Actividad3_UD2 {
                 JFrame ventana1= new JFrame("Info tabla Rental");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -109,14 +108,13 @@ public class Actividad3_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });
@@ -126,7 +124,6 @@ public class Actividad3_UD2 {
                 JFrame ventana1= new JFrame("Info tabla Store");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -143,14 +140,13 @@ public class Actividad3_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });
@@ -160,7 +156,6 @@ public class Actividad3_UD2 {
                 JFrame ventana1= new JFrame("Info tabla Payment-Customer");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -179,14 +174,13 @@ public class Actividad3_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-                
-                ventana1.add(opcionPayment);
+
                 ventana1.setVisible(true);
             }
         });
@@ -196,7 +190,6 @@ public class Actividad3_UD2 {
                 JFrame ventana1= new JFrame("Info tabla Payment-Customer");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -214,14 +207,13 @@ public class Actividad3_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-                
-                ventana1.add(opcionPayment);
+
                 ventana1.setVisible(true);
             }
         });
@@ -231,7 +223,6 @@ public class Actividad3_UD2 {
                 JFrame ventana1= new JFrame("Info tabla Staff");
                 ventana1.setSize(300, 275);
                 ventana1.setResizable(false);
-                JOptionPane opcionPayment= new JOptionPane();
                 
                 try {
                     // Conexión a la base de datos
@@ -250,14 +241,13 @@ public class Actividad3_UD2 {
                         }
                     
                     JScrollPane scrollPane = new JScrollPane(textArea);
-                    opcionPayment.add(scrollPane);
+                    ventana.getContentPane().add(scrollPane);
 
                     con.close();
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
                 
-                ventana1.add(opcionPayment);
                 ventana1.setVisible(true);
             }
         });
