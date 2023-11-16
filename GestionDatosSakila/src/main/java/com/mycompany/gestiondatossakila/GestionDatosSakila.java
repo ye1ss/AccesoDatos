@@ -14,7 +14,9 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -31,6 +33,10 @@ public class GestionDatosSakila {
         JFrame ventana= new JFrame("Menú");
         ventana.setSize(600,550);
         ventana.setResizable(false);
+        
+        ImageIcon imagen= new ImageIcon("D:\\YeismilIFP\\1Trimestre\\AccesoDatos\\GestionDatosSakila\\imagenCine.jpg");
+        JLabel labelImagen= new JLabel(imagen);
+        ventana.add(labelImagen);
         
         JMenuBar menuBar= new JMenuBar();
 
@@ -360,6 +366,7 @@ public class GestionDatosSakila {
 
         ventana.add(menuBar);
         ventana.getContentPane().add(BorderLayout.NORTH, menuBar);
+        ventana.getContentPane().add(BorderLayout.CENTER,labelImagen);
         ventana.setVisible(true);
     }
 }
