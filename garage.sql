@@ -6,6 +6,8 @@
 -- Tiempo de generación: 16-11-2023 a las 11:18:55
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.2
+create database garaje;
+use garaje;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
